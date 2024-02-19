@@ -1,0 +1,202 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image" href="/cloudy(1).png">
+  <title>Weather App</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+ <link rel="stylesheet" href="style.css">
+</head>
+<style>
+    * {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+:root {
+--white: #ffffff;
+--off-white: #e5e5e5;
+--transp-white-1: rgba(255, 255, 255, 0.25);
+--transp-white-2: rgba(255, 255, 255, 0.1);
+--blue-1: #62b8f5;
+--blue-2: #4475ef;
+--shadow: rgba(3, 46, 87, 0.2);
+}
+
+body {
+height: 720px;
+background: linear-gradient(to right,rgb(211, 92, 179),rgb(183, 189, 216));
+}
+.wrapper {
+font-size: 16px;
+width: 1080px; 
+max-width: 448px; 
+position: absolute;
+transform: translate(-50%, -50%);
+top: 50%;
+left: 50%;
+}  
+
+.container {
+width: 100%;
+backdrop-filter: blur(10px);
+padding: 48px 28.8px; 
+border-radius: 9.6px; 
+text-align: center;
+}
+
+.shape {
+position: absolute;
+border-radius: 50%;
+}
+
+.shape-1 {
+height: 208px; 
+width: 208px; 
+right: -104px; 
+top: 28.8px; 
+}
+
+.shape-2 {
+height: 176px; 
+width: 176px; 
+bottom: -59.2px; 
+left: -40px;
+}
+
+.search-container {
+font-size: 16px;
+display: grid;
+grid-template-columns: 9fr 3fr;
+gap: 20px; 
+}
+
+.search-container input,
+.search-container button {
+outline: none;
+font-size: 16px; 
+border: none;
+}
+
+.search-container input {
+padding: 11.2px; 
+background-color: transparent;
+border-bottom: 2px solid var(--transp-white-1);
+color: var(--white);
+font-weight: 300;
+}
+
+.search-container input::placeholder {
+color: var(--off-white);
+}
+
+.search-container input:focus {
+border-color: var(--white);
+}
+
+.search-container button {
+color: var(--blue-2);
+background-color: var(--white);
+border-radius: 4.8px;
+}
+
+#result h2 {
+color: var(--white);
+text-transform: uppercase;
+letter-spacing: 2.88px; 
+font-weight: 600;
+margin: 20px 0; 
+}
+
+.weather,
+.desc {
+color: var(--off-white);
+text-transform: uppercase;
+letter-spacing: 2px; 
+font-size: 14.4px; 
+font-weight: 500;
+line-height: 32px; 
+}
+
+.weather {
+margin-top: -11.2px; 
+}
+
+#result img {
+margin: 9.6px 0 0 0; 
+width: 158.4px; 
+filter: drop-shadow(0 28.8px 59.2px var(--shadow)); 
+}
+
+#result h1 {
+font-size: 64px; 
+margin: 19.2px 0 28.8px 0; 
+line-height: 0;
+font-weight: 400;
+color: var(--white);
+}
+
+.temp-container {
+display: flex;
+justify-content: center;
+}
+
+.temp-container div {
+padding: 4.8px 16px; 
+}
+
+.temp-container div:first-child {
+border-right: 1px solid var(--transp-white-1);
+}
+
+.temp-container .title {
+font-weight: 600;
+color: var(--white);
+}
+
+.temp-container .temp {
+font-weight: 300;
+color: var(--off-white);
+}
+
+.msg {
+margin-top: 28.8px; 
+color: var(--white);
+font-weight: 500;
+text-transform: uppercase;
+letter-spacing: 1.6px; 
+}
+
+.search-container{
+  width: 100%;
+}
+
+@media screen and (max-width: 450px) {
+.wrapper {
+  font-size: 14px;
+}
+}
+</style>
+<body>
+  <div class="container mt-5">
+    <div class="row justify-content-center">
+      <div class="col-md-6">
+        <div class="search-container">
+          <input type="text" class="form-control" placeholder="Enter a city name" id="city">
+          <button class="btn btn-primary btn-block mt-2" id="search-btn">Search</button>
+        </div>
+        <div id="result" class="text-center mt-4"></div>
+      </div>
+    </div>
+  </div>
+  
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js" integrity="sha384-zEx6pOALeOjF3zVqeqLsOzEtzV3Hcb7wsyH5Jv5+5lAxZkHU4Zo5FNYK4OFEfF7/" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shCzJYYCyAYF+gksXs8g+JQbEmcvyYfoRSJo+" crossorigin="anonymous"></script>
+  <script src="script.js"></script>
+</body>
+</html>
